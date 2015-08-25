@@ -70,6 +70,11 @@ class Hiera
           next unless answer
           break
         end
+        
+        unless answer.nil?
+          answer = YAML.load(answer)
+        end
+        
         answer
       end
 
